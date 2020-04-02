@@ -1,5 +1,4 @@
-; SPI_example.asm
-
+.include "./m328Pdef.inc"
 .DSEG
 msg_buffer: .BYTE 30
 
