@@ -1,5 +1,6 @@
 ; complete interrupt vector table.
-	jmp RESET ; Reset
+setup_int:
+  jmp RESET ; Reset
 	jmp INT0_IR ; IRQ0
 	jmp INT1_IR ; IRQ1
 	jmp PCINT0_IR ; PCINT0
