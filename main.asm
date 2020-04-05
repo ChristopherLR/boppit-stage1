@@ -1,9 +1,9 @@
 .include "./m328Pdef.inc"
 
-.org    0x0000	; start at beginning of program address
+.org    0x0000                  ; start at beginning of program address
 
 ; Setup IVR to no_interrupt
- call setup_int
+call setup_int
 ;    On reset we branch to here
 RESET: ; Main program start
     ldi	r16,high(RAMEND)      ; Set Stack Pointer to top of RAM
@@ -45,7 +45,7 @@ pause:
     rjmp	mainLoop
 
 check_win:
-    ldi		r20, 0x14           ; Set to read PORTB
+    ldi	r20, 0x14           ; Set to read PORTB
     call	SPI_Read_Command
     cpi	r16, 0b00000100     ; Check to see if PORTB has green lit
     breq	win_sequence
